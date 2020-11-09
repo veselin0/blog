@@ -12,9 +12,7 @@ const IndexScreen = () => {
         data={blogPosts}
         keyExtractor={(blogPost) => blogPost.title}
         renderItem={({ item }) => {
-          return (
-            <Text>{item.title}</Text>
-          );
+          return <Text>{item.title}</Text>;
         }}
       />
     </View>
