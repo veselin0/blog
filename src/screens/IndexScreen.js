@@ -11,7 +11,7 @@ import { Context } from '../context/BlogContext';
 import Icon from 'react-native-vector-icons/Feather';
 
 const IndexScreen = () => {
-  const { state, addBlogPost } = useContext(Context);
+  const { state, addBlogPost, deleteBlogPost } = useContext(Context);
 
   return (
     <View>
@@ -25,7 +25,7 @@ const IndexScreen = () => {
               <Text style={styles.title}>
                 {item.title} - {item.id}
               </Text>
-              <TouchableOpacity onPress={() => console.log(item.id)} >
+              <TouchableOpacity onPress={() => deleteBlogPost(item.id)} >
                 <Icon name="trash" style={styles.icon} />
               </TouchableOpacity>
             </View>
