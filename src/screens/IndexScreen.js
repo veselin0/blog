@@ -15,7 +15,7 @@ const IndexScreen = ({ navigation }) => {
 
   useEffect(() => {
     getBlogPosts();
-  }, [getBlogPosts]);
+  }, []);
 
   return (
     <View>
