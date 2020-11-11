@@ -1,5 +1,5 @@
 import createDataContext from './createDataContext';
-import { jsonServer } from '../api/jsonServer';
+import jsonServer from '../api/jsonServer';
 
 const blogReducer = (state, action) => {
   switch (action.type) {
@@ -28,7 +28,6 @@ const blogReducer = (state, action) => {
 const getBlogPosts = (dispatch) => {
   return async () => {
     const response = await jsonServer.get('/blogposts');
-    // response.data === [ {}, {}, {} ]
     dispatch({ type: 'get_blogposts', payload: response.data });
   };
 };
